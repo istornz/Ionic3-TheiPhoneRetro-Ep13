@@ -1,10 +1,15 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>Soundboard</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-  
-  </ion-content>
-  
+  <ion-navbar>
+    <ion-title>Soundboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <button *ngFor="let sound of soundboardData" ion-item [ngStyle]="{'color': sound.button.color}" (tap)="playSound(sound.soundPath)">
+        {{ sound.button.name }}
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>
